@@ -6,13 +6,13 @@ class Airport
 {
 private:
 
-	char flight_number[100];            //номер рейсу
-	char department_point[255];         //пункт відправлення
-	char point_of_importance[255];      //пункт призначення
-	char Letak_brand[100];              //марка літака
-	char how_many_places_there_are[100];//кількість місць
-	char number_of_free_places[100];    //кількість вільних місць
-	char passenger_list[255];           //список пасажирів
+	char _flight_number[100];            //номер рейсу
+	char _department_point[255];         //пункт відправлення
+	char _point_of_importance[255];      //пункт призначення
+	char _Letak_brand[100];              //марка літака
+	char _how_many_places_there_are[100];//кількість місць
+	char _number_of_free_places[100];    //кількість вільних місць
+	char _passenger_list[255];           //список пасажирів
 
 public:
 
@@ -20,7 +20,20 @@ public:
 	Airport();
 	~Airport();
 
+	void set_flight_number(const char* flight_number);
+	void set_department_point(const char* department_point);
+	void set_point_of_importance(const char* point_of_importance);
+	void set_passenger_list(const char* passenger_list);
 
+	const char* get_flight_number();
+	const char* get_department_point();
+	const char* get_point_of_importance();
+	const char* get_Letak_brand();
+	const char* get_how_many_places_there_are();
+	const char* get_number_of_free_places();
+	const char* get_passenger_list();
+
+	void showInfoAirport(); // виведення на екран
 
 
 
