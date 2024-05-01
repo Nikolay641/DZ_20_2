@@ -31,7 +31,9 @@ Student::Student(const char* name, const char* mark_serednia, const char* teleph
     strcpy_s(this->name_zaclad, 255, name_zaclad);
     strcpy_s(this->number_grup, 50, number_grup);
 #ifdef DEBUG
-    cout << "Student(const char* name, const char* mark_serednia, const char* telephone, const char* address, const char* name_zaclad, const char* number_grup)" << endl;
+
+    cout << "Student: " << endl;
+
 #endif // DEBUG
 
 }
@@ -118,6 +120,13 @@ const char* Student::getNumber_grup()
 
 void Student::showInfo()
 {
-
+    cout << "-------------------------" << endl;
+    cout << "student     - " << name << endl;
+    cout << "mark        - " << mark_serednia << endl;
+    cout << "telephone   - " << telephone << endl;
+    cout << "address     - " << address << endl;
+    cout << "name zaclad - " << name_zaclad << endl;
+    cout << "grup        - " << number_grup << endl;
+    cout << "-------------------------" << endl << endl;
 
 }

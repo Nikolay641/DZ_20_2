@@ -13,6 +13,6 @@ int main()
 
 	Student b("Iskorostenskiy M", "12", "0505892080", "Bezludovka", "Dom", "1");
 
-
+	b.showInfo();
 };
 
