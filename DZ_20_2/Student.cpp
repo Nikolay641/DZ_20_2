@@ -24,9 +24,21 @@ Student::Student()
 }
 Student::Student(const char* name, const char* mark_serednia, const char* telephone, const char* address, const char* name_zaclad, const char* number_grup)
 {
+    strcpy_s(this->name, 100, name);
+    strcpy_s(this->mark_serednia, 10, mark_serednia);
+    strcpy_s(this->telephone, 50, telephone);
+    strcpy_s(this->address, 255, address);
+    strcpy_s(this->name_zaclad, 255, name_zaclad);
+    strcpy_s(this->number_grup, 50, number_grup);
+#ifdef DEBUG
+    cout << "Student(const char* name, const char* mark_serednia, const char* telephone, const char* address, const char* name_zaclad, const char* number_grup)" << endl;
+#endif // DEBUG
+
 }
 Student::~Student()
 {
+    cout << "~Student() " << name << endl;
+
 }
 void Student::setName(const char* newName)
 {

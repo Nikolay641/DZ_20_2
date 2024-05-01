@@ -5,7 +5,13 @@
 #include"Student.h"
 int main()
 {
+	// Конструктор за замовчуванням
+
 	Student a;
+
+	// Конструктор з параметрами
+
+	Student b("Iskorostenskiy M", "12", "0505892080", "Bezludovka", "Dom", "1");
 
 
 };

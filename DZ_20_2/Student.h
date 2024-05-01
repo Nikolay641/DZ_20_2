@@ -15,7 +15,7 @@ private://змінних-членах класу: ПІБ, середню оцінку, контактний телефон, адресу 
 	char name_zaclad[255];
 	char number_grup[50];
 
-
+	
 public:
 
 	Student();
