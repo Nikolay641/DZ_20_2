@@ -37,58 +37,87 @@ Student::Student(const char* name, const char* mark_serednia, const char* teleph
 }
 Student::~Student()
 {
+#ifdef DEBUG
     cout << "~Student() " << name << endl;
+#endif // DEBUG
 
+    //*******************************
 }
 void Student::setName(const char* newName)
 {
+
+    if (strlen(newName) > 2) {
+        strcpy_s(name, 100, newName);
+    }
+    else {
+        cout << "Error strlen(newName): \n";
+    };
    
 }
 
 void Student::setMark_serednia(const char* newMark_serednia)
 {
 
-
+    if (strlen(newMark_serednia) > 0) {
+        strcpy_s(mark_serednia, 10, newMark_serednia);
+    }
+    else {
+        cout << "Error strlen(newMark_serednia): \n";
+    };
 }
 
 void Student::setTelephone(const char* newTelephone)
 {
+    if (strlen(newTelephone) > 4) {
+        strcpy_s(telephone, 50, newTelephone);
+    }
+    else {
+        cout << "Error strlen(newTelephone): \n";
+    };
 }
 
 void Student::setNumber_grup(const char* newNumber_grup)
 {
+    if (strlen(newNumber_grup) > 0) {
+        strcpy_s(number_grup, 50, newNumber_grup);
+    }
+    else {
+        cout << "Error strlen(newTelephone): \n";
+    };
 }
 
-const char Student::getName()
+const char* Student::getName()
 {
-    return 0;
+    return name;
 }
 
-const char Student::getMark_serednia()
+const char* Student::getMark_serednia()
 {
-    return 0;
+    return mark_serednia;
 }
 
-const char Student::getTelephone()
+const char* Student::getTelephone()
 {
-    return 0;
+    return telephone;
 }
 
-const char Student::getAddress()
+const char* Student::getAddress()
 {
-    return 0;
+    return address;
 }
 
-const char Student::getName_zaclad()
+const char* Student::getName_zaclad()
 {
-    return 0;
+    return name_zaclad;
 }
 
-const char Student::getNumber_grup()
+const char* Student::getNumber_grup()
 {
-    return 0;
+    return number_grup;
 }
 
 void Student::showInfo()
 {
+
+
 }

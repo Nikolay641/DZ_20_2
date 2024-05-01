@@ -29,14 +29,14 @@ public:
 	void setTelephone(const char* newTelephone);
 	void setNumber_grup(const char* newNumber_grup);
 
-	const char getName();
-	const char getMark_serednia();
-	const char getTelephone();
-	const char getAddress();
-	const char getName_zaclad();
-	const char getNumber_grup();
+	const char* getName();
+	const char* getMark_serednia();
+	const char* getTelephone();
+	const char* getAddress();
+	const char* getName_zaclad();
+	const char* getNumber_grup();
 
-	void showInfo();
+	void showInfo(); // виведення на екран
 
 };
 
