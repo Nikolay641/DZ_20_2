@@ -4,21 +4,25 @@
 #include <string>
 #include <cstring>
 #define DEBUG
-Airport::Airport(const char* flight_number, const char* department_point, const char* point_of_importance, const char* Letak_brand, const char* how_many_places_there_are, const char* number_of_free_places, const char* passenger_list)
+Airport::Airport(const char* flight_number, const char* department_point,
+    const char* point_of_importance, const char* Letak_brand,
+    const char* how_many_places_there_are, const char* number_of_free_places,
+    const char* passenger_list)
 {
 
-    strcpy_s(this->_flight_number, 100, _flight_number);
-    strcpy_s(this->_department_point, 255, _department_point);
-    strcpy_s(this->_point_of_importance, 255, _point_of_importance);
-    strcpy_s(this->_Letak_brand, 100, _Letak_brand);
+    strcpy_s(this->_flight_number, 100, flight_number);
+    strcpy_s(this->_department_point, 255, department_point);
+    strcpy_s(this->_point_of_importance, 255, point_of_importance);
+    strcpy_s(this->_Letak_brand, 100, Letak_brand);
     _how_many_places_there_are = 4;    //кількість місць
     _number_of_free_places = 2;        //кількість вільних місць
     //strcpy_s(this->_passenger_list, 255, _passenger_list); //список пасажирів
         // виділення памяті для масиву рядків
-    _passenger_list[100] = new char* [_how_many_places_there_are - _number_of_free_places];
+    _passenger_list = new char* [_how_many_places_there_are - _number_of_free_places];
     // виділення памяті під перший рядок
     _passenger_list[0] = new char[100] { "" };
-    strcpy_s(this->_passenger_list[0], 100, _passenger_list);
+
+    strcpy_s(this->_passenger_list[0], 100, passenger_list);
 
 
 
@@ -88,9 +92,9 @@ const char* Airport::get_Letak_brand()
     return nullptr;
 }
 
-const char* Airport::get_how_many_places_there_are()
+const int Airport::get_how_many_places_there_are()
 {
-    return nullptr;
+    return 0;
 }
 
 const int Airport::get_number_of_free_places()

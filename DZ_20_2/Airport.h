@@ -12,7 +12,7 @@ private:
 	char _Letak_brand[100];              //марка літака
 	int _how_many_places_there_are;      //кількість місць
 	int _number_of_free_places;          //кількість вільних місць
-	char** _passenger_list[100];         //список пасажирів
+	char** _passenger_list;         //список пасажирів
 
 public:
 
@@ -34,10 +34,6 @@ public:
 	const char* get_passenger_list();
 
 	void showInfoAirport(); // виведення на екран
-
-
-
-
 
 
 };
