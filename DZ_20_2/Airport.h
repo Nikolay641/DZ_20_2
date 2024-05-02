@@ -10,13 +10,17 @@ private:
 	char _department_point[255];         //пункт відправлення
 	char _point_of_importance[255];      //пункт призначення
 	char _Letak_brand[100];              //марка літака
-	int _how_many_places_there_are;      //кількість місць
-	int _number_of_free_places;          //кількість вільних місць
-	char** _passenger_list;         //список пасажирів
+	int _how_many_places_there_are;      //кількість місць             4
+	int _number_of_free_places;          //кількість вільних місць     4
+	int _number_places = 0;              // калькулятор 
+	char** _passenger_list;              //список пасажирів
 
 public:
 
-	Airport(const char* flight_number, const char* department_point, const char* point_of_importance, const char* Letak_brand, const char* how_many_places_there_are, const char* number_of_free_places, const char* passenger_list);
+	Airport(const char* flight_number, const char* department_point,
+		const char* point_of_importance, const char* Letak_brand,
+		const int how_many_places_there_are, const int number_of_free_places,
+		const char* passenger_list);
 	Airport();
 	~Airport();
 
@@ -31,10 +35,12 @@ public:
 	const char* get_Letak_brand();
 	const int get_how_many_places_there_are();
 	const int get_number_of_free_places();
-	const char* get_passenger_list();
 
 	void showInfoAirport(); // виведення на екран
 
+	void add_passenger_list(const char* passenger_list); // продаж та додавання пасажира
+
+	void dell_passenger_list(const char* passenger_list);
 
 };
 

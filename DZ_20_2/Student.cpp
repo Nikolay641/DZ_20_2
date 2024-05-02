@@ -52,7 +52,7 @@ void Student::setName(const char* newName)
         strcpy_s(name, 100, newName);
     }
     else {
-        cout << "Error strlen(newName): \n";
+        cout << "Error strlen: \n";
     };
    
 }
@@ -64,7 +64,7 @@ void Student::setMark_serednia(const char* newMark_serednia)
         strcpy_s(mark_serednia, 10, newMark_serednia);
     }
     else {
-        cout << "Error strlen(newMark_serednia): \n";
+        cout << "Error strlen: \n";
     };
 }
 
@@ -74,7 +74,7 @@ void Student::setTelephone(const char* newTelephone)
         strcpy_s(telephone, 50, newTelephone);
     }
     else {
-        cout << "Error strlen(newTelephone): \n";
+        cout << "Error strlen: \n";
     };
 }
 
@@ -84,7 +84,7 @@ void Student::setNumber_grup(const char* newNumber_grup)
         strcpy_s(number_grup, 50, newNumber_grup);
     }
     else {
-        cout << "Error strlen(newTelephone): \n";
+        cout << "Error strlen: \n";
     };
 }
 
