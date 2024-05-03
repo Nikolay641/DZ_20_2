@@ -32,7 +32,7 @@ int main()
 	x.add_passenger_list("Prizr");
 
 	x.showInfoAirport();
-
-
+	x.dell_passenger_list("1");
+	x.showInfoAirport();
 };
 

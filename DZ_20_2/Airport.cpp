@@ -45,7 +45,7 @@ Airport::Airport()
     _number_of_free_places = 4;        //кількість вільних місць
     //strcpy_s(this->_passenger_list, 255, _passenger_list); //список пасажирів
         // виділення памяті для масиву рядків
-    _passenger_list = new char* [_how_many_places_there_are - _number_of_free_places];
+    _passenger_list = new char* [_number_places];
     // виділення памяті під перший рядок
 
 #ifdef DEBUG
@@ -64,7 +64,7 @@ Airport::~Airport()
 
 #endif // DEBUG
 
-    for (int i = 0; i < _how_many_places_there_are - _number_of_free_places; i++)
+    for (int i = 0; i < _number_places; i++)
     {
         delete[] _passenger_list[i];
     }
@@ -199,10 +199,39 @@ void Airport::add_passenger_list(const char* passenger_list)
 
 }
 
-void Airport::dell_passenger_list(const char* passenger_list)
-{
+void Airport::dell_passenger_list(const char* passenger_list) //повернення квитка
+{   
+    bool passenger_found = false;
+    int index = -1;
 
+    // Пошук пасажира у списку
+    for (int i = 0; i < _number_places; i++)
+    {
+        if (strcmp(_passenger_list[i], passenger_list) == 0)
+        {
+            passenger_found = true;
+            index = i;
+            break;
+        }
+    }
 
+    if (passenger_found)
+    {
+        // Видалення пасажира зі списку
+        delete[] _passenger_list[index];
+        for (int i = index; i < _number_places - 1; i++)
+        {
+            _passenger_list[i] = _passenger_list[i + 1];
+        }
+        _number_places--;
+
+        // Збільшення кількості вільних місць
+        _number_of_free_places++;
+    }
+    else
+    {
+        cout << "Пасажира не знайдено!!!.\n";
+    }
 }
 
 

@@ -40,7 +40,7 @@ public:
 
 	void add_passenger_list(const char* passenger_list); // продаж та додавання пасажира
 
-	void dell_passenger_list(const char* passenger_list);
+	void dell_passenger_list(const char* passenger_list);//повернення квитка
 
 };
 
